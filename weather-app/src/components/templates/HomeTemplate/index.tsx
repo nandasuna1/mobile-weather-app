@@ -1,4 +1,4 @@
-import { View } from 'react-native'
+import { FlatList, View } from 'react-native'
 import React from 'react'
 import { CenterTextContainer, Container, Content, ImageContainer, WeatherInfoBox, WeatherInfoText, WeatherTodayInfoBox, WeatherWeekInfoBox, WeekInfoBox } from './styles'
 import { Header } from '@molecules/Header'
@@ -22,10 +22,13 @@ export type HomeTemplateInterface = {
 }
 
 export type DayData = {
+  temp?: number,
   max?: number,
   min?: number,
   description?: string,
   date?: Date,
+  rain?: number,
+  humidity?: number,
   rain_probability?: number,
   wind_speedy?: string,
   cloudiness?: number
@@ -34,7 +37,7 @@ export default function HomeTemplate({HeaderProps, TodayData, WeekList }:HomeTem
   const media = TodayData?.max && TodayData?.min ? (TodayData?.max + TodayData?.min)/2 : null;
   const today = TodayData?.date || `${new Date().getDate()}/${new Date().getMonth()}`
   return (
-    <Container>
+    <Container isDay={TodayData?.currently}>
       <Content>
 
       <Header 
@@ -57,7 +60,7 @@ export default function HomeTemplate({HeaderProps, TodayData, WeekList }:HomeTem
             icon: 'arrow-drop-down',
             size: 40            
           },
-          text: HeaderProps?.city_name
+          text: HeaderProps?.city
         }}
       />
 
@@ -66,7 +69,7 @@ export default function HomeTemplate({HeaderProps, TodayData, WeekList }:HomeTem
       </ImageContainer>
 
       <CenterTextContainer>
-        <Text typeScale='huge'>{media}</Text>
+        <Text typeScale='huge'>{TodayData?.temp}</Text>
         <Text typeScale='big'>{TodayData?.description}</Text>
         <Text typeScale='small'>Max.: {TodayData?.max}° Min.:{TodayData?.min}°</Text>
       </CenterTextContainer>
@@ -83,7 +86,7 @@ export default function HomeTemplate({HeaderProps, TodayData, WeekList }:HomeTem
           TextProps={{
             typeScale: 'small'
           }}
-          text={`${TodayData?.rain_probability || 0}%`}
+          text={`${(TodayData?.rain * 100) || 0}%`}
         />
         <ButtonIcon 
           ImageProps={{
@@ -95,7 +98,7 @@ export default function HomeTemplate({HeaderProps, TodayData, WeekList }:HomeTem
           TextProps={{
             typeScale: 'small'
           }}
-          text={`${TodayData?.cloudiness || 0} `}
+          text={`${TodayData?.humidity || 0} `}
         />
         <ButtonIcon 
           ImageProps={{
@@ -120,47 +123,24 @@ export default function HomeTemplate({HeaderProps, TodayData, WeekList }:HomeTem
         <WeatherTodayInfoBox>
           <ButtonIcon 
             IconProps={{
-            icon: 'cloud'
+            icon: 'wb-sunny'
             }}
             TextProps={{
               typeScale: 'normal'
             }}
-            text='10:00'
-            upText='29°'
+            text={TodayData?.sunrise}
+            upText='Nascer do Sol'
             layout='VERTICAL'
           />
           <ButtonIcon 
             IconProps={{
-            icon: 'cloud'
+            icon: 'nights-stay'
             }}
             TextProps={{
               typeScale: 'normal'
             }}
-            text='10:00'
-            upText='29°'
-            layout='VERTICAL'
-          />
-          <ButtonIcon 
-            IconProps={{
-            icon: 'cloud'
-            }}
-            TextProps={{
-              typeScale: 'normal'
-            }}
-            text='10:00'
-            upText='29°'
-            layout='VERTICAL'
-          />
-
-          <ButtonIcon 
-            IconProps={{
-            icon: 'cloud'
-            }}
-            TextProps={{
-              typeScale: 'normal'
-            }}
-            text='10:00'
-            upText='29°'
+            text={TodayData?.sunset}
+            upText='Por do sol'
             layout='VERTICAL'
           />
         </WeatherTodayInfoBox>
@@ -173,40 +153,31 @@ export default function HomeTemplate({HeaderProps, TodayData, WeekList }:HomeTem
         </WeatherInfoText>
 
         <WeatherWeekInfoBox>
-          <ButtonIcon 
-            IconProps={{
-            icon: 'cloud'
-            }}
-            TextProps={{
-              typeScale: 'small'
-            }}
-            text='13° 11°'
-            upText='monday'
-            layout='HORIZONTAL'
-          />
-          <ButtonIcon 
-            IconProps={{
-            icon: 'wb-sunny'
-            }}
-            TextProps={{
-              typeScale: 'small'
-            }}
-            upText='monday'
-            text='13° 11°'
-            layout='HORIZONTAL'
-          />
-          <ButtonIcon 
-            IconProps={{
-            icon: 'electrical-services'
-            }}
-            TextProps={{
-              typeScale: 'small'
-            }}
-            upText='monday'
-            text='13° 11°'
 
+        <FlatList
+          data={WeekList}
+          keyExtractor={item => item.date}
+          renderItem={({item}) => (
+            <ButtonIcon 
+            ImageProps={{
+              name:item.condition
+            }}
+            TextProps={{
+              typeScale: 'small'
+            }}
+            text={item.description}
+            downText={`${item.max}°${item.min}°`}
+            upText={item.weekday}
             layout='HORIZONTAL'
           />
+          )}
+          contentContainerStyle={WeekList?.length === 0 && {flex: 1}}
+          ListEmptyComponent={() => (
+            <View><Text>Sem previsoes</Text></View>
+          )}
+          showsVerticalScrollIndicator={false} 
+        />
+
         </WeatherWeekInfoBox>
       </WeekInfoBox>
       </Content>

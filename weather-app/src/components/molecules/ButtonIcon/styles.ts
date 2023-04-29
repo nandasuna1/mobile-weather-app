@@ -16,6 +16,7 @@ export const Container = styled(TouchableOpacity)<ButtonIconLayout>`
     ${({ layout }) => (layout ? flexDirectionStyle[layout] : flexDirectionStyle['HORIZONTAL'])}
     align-items: center;
     justify-content: space-between;
+    /* column-gap: 10px; */
 `
 
 export const Icon = styled(MaterialIcons).attrs<Props>(({theme, type, size}) => ({

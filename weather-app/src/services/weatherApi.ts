@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react"
 
-const baseUrl = 'https://api.hgbrasil.com/weather?format=json&key=e05dcdac';
+const baseUrl = 'https://api.hgbrasil.com/weather?key=e05dcdac&format=json&';
 
 
 export const weatherApi = createApi({
@@ -8,8 +8,11 @@ export const weatherApi = createApi({
     baseQuery: fetchBaseQuery({ baseUrl}),
     endpoints: (builder) => ({
         getweatherByIP: builder.query({
-            query: () =>  `user_ip=remote`
+            query: () =>  `&user_ip=remote`
 
+        }),
+        getWeatherByCityName: builder.query({
+            query: (cityName) => `&city_name=${cityName}`
         })
     })
 })
