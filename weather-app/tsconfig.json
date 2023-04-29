@@ -8,19 +8,25 @@
         "./src/assets/*"
       ],
       "@atoms/*": [
-        "./src/atoms/*"
+        "src/components/atoms/*"
       ],
       "@screens/*": [
-        "./src/screens/*"
+        "src/components/screens/*"
       ],
       "@molecules/*": [
-        "./src/molecules/*"
+        "./src/components/molecules/*"
       ],
       "@templates/*": [
-        "src/template/*"
+        "src/components/templates/*"
       ],
       "@storage/*": [
         "./src/storage/*"
+      ],
+      "@services/*": [
+        "./src/services/*"
+      ],
+      "@store/*": [
+        "./src/store/*"
       ],
       "@utils/*": [
         "./src/utils/*"

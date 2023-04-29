@@ -1,15 +1,38 @@
 import { View } from 'react-native'
 import React from 'react'
 import { CenterTextContainer, Container, Content, ImageContainer, WeatherInfoBox, WeatherInfoText, WeatherTodayInfoBox, WeatherWeekInfoBox, WeekInfoBox } from './styles'
-import Text from '@atoms/Text'
 import { Header } from '@molecules/Header'
-import { Icon } from '@atoms/Icon'
 import { ButtonIcon } from '@molecules/ButtonIcon'
+
+import Text from '@atoms/Text'
 import Image from '@atoms/Image'
+
 import rainStatus from '@assets/rainStatus2.png'
 import windStatus from '@assets/windStatus.png'
 import humidityStatus from '@assets/humidityStatus.png'
-export default function HomeTemplate() {
+import { Icon } from '@atoms/Icon'
+
+export type HomeTemplateInterface = {
+  HeaderProps?: {
+    city_name?: string,
+  },
+  TodayData?: DayData,
+  WeekList?: DayData[]
+
+}
+
+export type DayData = {
+  max?: number,
+  min?: number,
+  description?: string,
+  date?: Date,
+  rain_probability?: number,
+  wind_speedy?: string,
+  cloudiness?: number
+}
+export default function HomeTemplate({HeaderProps, TodayData, WeekList }:HomeTemplateInterface) {
+  const media = TodayData?.max && TodayData?.min ? (TodayData?.max + TodayData?.min)/2 : null;
+  const today = TodayData?.date || `${new Date().getDate()}/${new Date().getMonth()}`
   return (
     <Container>
       <Content>
@@ -34,7 +57,7 @@ export default function HomeTemplate() {
             icon: 'arrow-drop-down',
             size: 40            
           },
-          text: 'Fortaleza'
+          text: HeaderProps?.city_name
         }}
       />
 
@@ -43,9 +66,9 @@ export default function HomeTemplate() {
       </ImageContainer>
 
       <CenterTextContainer>
-        <Text typeScale='huge'>30°</Text>
-        <Text typeScale='big'>Precipitations</Text>
-        <Text typeScale='small'>Max.: 24° Min.:20°</Text>
+        <Text typeScale='huge'>{media}</Text>
+        <Text typeScale='big'>{TodayData?.description}</Text>
+        <Text typeScale='small'>Max.: {TodayData?.max}° Min.:{TodayData?.min}°</Text>
       </CenterTextContainer>
 
 
@@ -60,7 +83,7 @@ export default function HomeTemplate() {
           TextProps={{
             typeScale: 'small'
           }}
-          text='6%'
+          text={`${TodayData?.rain_probability || 0}%`}
         />
         <ButtonIcon 
           ImageProps={{
@@ -72,7 +95,7 @@ export default function HomeTemplate() {
           TextProps={{
             typeScale: 'small'
           }}
-          text='90%'
+          text={`${TodayData?.cloudiness || 0} `}
         />
         <ButtonIcon 
           ImageProps={{
@@ -84,14 +107,14 @@ export default function HomeTemplate() {
           TextProps={{
             typeScale: 'small'
           }}
-          text='19km/h'
+          text={`${TodayData?.wind_speedy || '0km/h'} `}
         />
       </WeatherInfoBox>
 
       <WeekInfoBox>
         <WeatherInfoText>
           <Text>Today</Text>
-          <Text>Mar, 9</Text>
+          <Text>{today}</Text>
         </WeatherInfoText>
 
         <WeatherTodayInfoBox>

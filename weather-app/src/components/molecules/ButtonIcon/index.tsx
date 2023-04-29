@@ -1,10 +1,10 @@
 import { TouchableOpacityProps } from "react-native";
 import { ButtonIconLayout, ButtonIconTypeStyleProps, Container } from "./styles";
 import { MaterialIcons } from '@expo/vector-icons'
+import { TextInterface } from "src/components/atoms/Text/interfaces";
 import { Icon, IconInterface } from "@atoms/Icon";
-import { TextInterface } from "@atoms/Text/interfaces";
-import Text from "@atoms/Text";
 import Image, { ImageInterface } from "@atoms/Image";
+import Text from "@atoms/Text";
 
 export type ButtonIconInterface = {
     IconProps?: IconInterface;
