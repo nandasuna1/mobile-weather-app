@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react"
 
-const baseUrl = 'https://api.hgbrasil.com/weather?key=e05dcdac&format=json&';
+const baseUrl = process.env.BASE_URL;
 
 
 export const weatherApi = createApi({
