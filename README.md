@@ -2,6 +2,8 @@
 
 https://user-images.githubusercontent.com/62397262/236048513-3ba15347-0792-4f41-aa63-a592a7de8fec.mp4
 
+![f1](https://user-images.githubusercontent.com/62397262/236066642-d42e997f-9500-4b88-85ec-260d5bdaa0d8.jpeg)
+
 
 
 ## Instruções de uso
