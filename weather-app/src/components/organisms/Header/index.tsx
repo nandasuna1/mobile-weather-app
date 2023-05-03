@@ -11,7 +11,7 @@ export type HeaderInterface = {
 export function Header({ButtonIconProps, ButtonTextIconProps, DropdownProps}: HeaderInterface) {
     return (
         <Container>
-             <DropdownComponent {...DropdownProps} />
+            <DropdownComponent {...DropdownProps} />
             <ButtonIcon {...ButtonIconProps}/>
         </Container>
     )

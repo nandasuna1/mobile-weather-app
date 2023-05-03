@@ -2,7 +2,6 @@ import React from 'react'
 import { FlatList, View } from 'react-native'
 import { CenterTextContainer, Container, Content, ImageContainer, WeatherInfoBox, WeatherInfoText, WeatherTodayInfoBox, WeatherWeekInfoBox, WeekInfoBox } from './styles'
 
-import { Header } from '@molecules/Header'
 import { ButtonIcon } from '@molecules/ButtonIcon'
 import { Icon } from '@atoms/Icon'
 import { DropdownComponentInterface } from '@molecules/Dropdown'
@@ -12,6 +11,7 @@ import Image, { condition_slug } from '@atoms/Image'
 import rainStatus from '@assets/rainStatus2.png'
 import windStatus from '@assets/windStatus.png'
 import humidityStatus from '@assets/humidityStatus.png'
+import { Header } from '@organisms/Header'
 
 
 export type HomeTemplateInterface = {
@@ -44,7 +44,7 @@ export default function HomeTemplate({HeaderProps, TodayData, WeekList, Dropdown
     <Container isDay={TodayData?.currently}>
       <Content>
     
-      <Header 
+      <Header
         ButtonIconProps={{
           IconProps: {
             size: 25,
