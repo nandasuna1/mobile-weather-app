@@ -1,24 +1,26 @@
-import { FlatList, View } from 'react-native'
 import React from 'react'
+import { FlatList, View } from 'react-native'
 import { CenterTextContainer, Container, Content, ImageContainer, WeatherInfoBox, WeatherInfoText, WeatherTodayInfoBox, WeatherWeekInfoBox, WeekInfoBox } from './styles'
+
 import { Header } from '@molecules/Header'
 import { ButtonIcon } from '@molecules/ButtonIcon'
-
+import { Icon } from '@atoms/Icon'
+import { DropdownComponentInterface } from '@molecules/Dropdown'
 import Text from '@atoms/Text'
-import Image from '@atoms/Image'
+import Image, { condition_slug } from '@atoms/Image'
 
 import rainStatus from '@assets/rainStatus2.png'
 import windStatus from '@assets/windStatus.png'
 import humidityStatus from '@assets/humidityStatus.png'
-import { Icon } from '@atoms/Icon'
+
 
 export type HomeTemplateInterface = {
   HeaderProps?: {
     city_name?: string,
   },
   TodayData?: DayData,
-  WeekList?: DayData[]
-
+  WeekList?: DayData[],
+  DropdownProps?: DropdownComponentInterface
 }
 
 export type DayData = {
@@ -31,15 +33,17 @@ export type DayData = {
   humidity?: number,
   rain_probability?: number,
   wind_speedy?: string,
-  cloudiness?: number
+  cloudiness?: number,
+  currently?: 'dia' | 'noite',
+  condition_slug?: condition_slug;
 }
-export default function HomeTemplate({HeaderProps, TodayData, WeekList }:HomeTemplateInterface) {
-  const media = TodayData?.max && TodayData?.min ? (TodayData?.max + TodayData?.min)/2 : null;
+
+export default function HomeTemplate({HeaderProps, TodayData, WeekList, DropdownProps }:HomeTemplateInterface) {
   const today = TodayData?.date || `${new Date().getDate()}/${new Date().getMonth()}`
   return (
     <Container isDay={TodayData?.currently}>
       <Content>
-
+    
       <Header 
         ButtonIconProps={{
           IconProps: {
@@ -47,35 +51,22 @@ export default function HomeTemplate({HeaderProps, TodayData, WeekList }:HomeTem
             icon: 'notifications'
           },
         }}
-        ButtonTextIconProps={{
-          IconProps: {
-            icon: 'location-pin',
-            size: 25
-          },
-          TextProps: {
-            weight:'bold',
-            typeScale:'normal',
-          },
-          IconFilterProps:{
-            icon: 'arrow-drop-down',
-            size: 40            
-          },
-          text: HeaderProps?.city
-        }}
+        
+        DropdownProps={DropdownProps}
       />
 
       <ImageContainer>
-        <Image width={284} resizeMode='contain' height={187}/>
+        <Image width={284} resizeMode='contain' height={187} condition={TodayData?.condition_slug}/>
       </ImageContainer>
 
-      <CenterTextContainer>
+      <CenterTextContainer isDay={TodayData?.currently}>
         <Text typeScale='huge'>{TodayData?.temp}</Text>
         <Text typeScale='big'>{TodayData?.description}</Text>
         <Text typeScale='small'>Max.: {TodayData?.max}° Min.:{TodayData?.min}°</Text>
       </CenterTextContainer>
 
 
-      <WeatherInfoBox>
+      <WeatherInfoBox isDay={TodayData?.currently}>
         <ButtonIcon 
           ImageProps={{
             source: rainStatus,
@@ -114,7 +105,7 @@ export default function HomeTemplate({HeaderProps, TodayData, WeekList }:HomeTem
         />
       </WeatherInfoBox>
 
-      <WeekInfoBox>
+      <WeekInfoBox isDay={TodayData?.currently}>
         <WeatherInfoText>
           <Text>Today</Text>
           <Text>{today}</Text>
@@ -146,7 +137,7 @@ export default function HomeTemplate({HeaderProps, TodayData, WeekList }:HomeTem
         </WeatherTodayInfoBox>
       </WeekInfoBox>
 
-      <WeekInfoBox>
+      <WeekInfoBox isDay={TodayData?.currently}>
         <WeatherInfoText>
           <Text>Next Forecast</Text>
           <Icon icon='calendar-today'/>

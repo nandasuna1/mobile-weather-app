@@ -1,21 +1,23 @@
 import { SafeAreaView } from 'react-native-safe-area-context';
 import styled, { css } from "styled-components/native";
 
-export const Container = styled(SafeAreaView)`
+export type DayAndNight = {
+ isDay?: 'dia' | 'noite'
+}
+export const Container = styled(SafeAreaView)<DayAndNight>`
     flex:1;
     flex-direction: column;
-    background-color: ${({theme}) => theme.COLORS.BLUE_300};
-    /* padding: 24px; */
+    background-color: ${({theme, isDay}) => isDay === 'dia' ? theme.COLORS.BLUE_300 : theme.COLORS.BLUE_600};
 `
 export const ImageContainer = styled.View`
     width: 100%;
     align-items: center;
 `
-export const CenterTextContainer = styled.View`
+export const CenterTextContainer = styled.View<DayAndNight>`
     align-items: center;
 `
 
-export const WeatherInfoBox = styled.View`
+export const WeatherInfoBox = styled.View<DayAndNight>`
     width: 85%;
     margin-top: 20px;
     padding: 5px;
@@ -23,11 +25,11 @@ export const WeatherInfoBox = styled.View`
     justify-content: space-around;
     align-self: center;
 
-    background-color: ${({theme}) => theme.COLORS.BLUE_500};
+    background-color: ${({theme, isDay}) => isDay === 'dia' ? theme.COLORS.BLUE_500 : theme.COLORS.BLUE_700};
     border-radius: 20px;
 `
 
-export const WeekInfoBox = styled.View`
+export const WeekInfoBox = styled.View<DayAndNight>`
     width: 85%;
     margin: 10px 0;
 
@@ -36,7 +38,7 @@ export const WeekInfoBox = styled.View`
     flex-direction: column;
     align-self: center;
 
-    background-color: ${({theme}) => theme.COLORS.BLUE_500};
+    background-color: ${({theme, isDay}) => isDay === 'dia' ? theme.COLORS.BLUE_500 : theme.COLORS.BLUE_700};
 `
 export const WeatherInfoText = styled.View`
     width: 100%;
