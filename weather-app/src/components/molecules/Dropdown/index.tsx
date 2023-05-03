@@ -70,7 +70,7 @@ export default function DropdownComponent(Props: DropdownComponentInterface) {
                 />
                 <FlatList 
                     data={data}
-                    showsHorizontalScrollIndicator={true}
+                    scrollEnabled={false}
                     renderItem={({item, index}) => {
                         return (
                             <ListComponent onPress={() => handleOnPress(item?.value)} >

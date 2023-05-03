@@ -166,7 +166,7 @@ export default function HomeTemplate({HeaderProps, TodayData, WeekList, Dropdown
           ListEmptyComponent={() => (
             <View><Text>Sem previsoes</Text></View>
           )}
-          showsVerticalScrollIndicator={false} 
+          scrollEnabled={false}
         />
 
         </WeatherWeekInfoBox>

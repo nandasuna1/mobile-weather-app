@@ -64,4 +64,6 @@ export const WeatherWeekInfoBox = styled.View`
 `
 
 export const List = styled.FlatList``
-export const Content = styled.ScrollView``
+
+export const Content = styled.ScrollView`
+`
