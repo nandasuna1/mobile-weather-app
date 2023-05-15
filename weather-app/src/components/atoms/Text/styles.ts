@@ -4,9 +4,7 @@ import { RFValue } from "react-native-responsive-fontsize";
 
 export const TextComponent = styled.Text<TextInterface>`
   ${({ typeScale }) => (typeScale ? typeScaleStyle[typeScale] : typeScaleStyle['normal'])}
-  ${({theme}) => css`
-    color: ${theme.COLORS.WHITE};
-  `}
+  color: ${({theme}) => theme.COLORS.WHITE};
 `;
 
 const typeScaleStyle = {

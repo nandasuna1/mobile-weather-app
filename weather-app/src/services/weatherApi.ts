@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 
-const baseUrl = process.env.BASE_URL_TWO;
+const baseUrl = process.env.BASE_URL_ONE;
 
 export const weatherApi = createApi({
     reducerPath: 'weatherApi',
