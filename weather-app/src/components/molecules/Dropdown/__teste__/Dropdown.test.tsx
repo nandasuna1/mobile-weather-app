@@ -87,4 +87,31 @@ describe('Dropdown', () => {
 
     })
 
+    test('call handleChange with correct value when value is pressed', () => {
+
+        const handleChangeMock = jest.fn();
+
+        const {getByText, getByTestId} = render(
+            <ThemeProvider theme={theme}>
+                <DropdownComponent
+                items={[
+                    {label: 'name 1', value:'1'},
+                    {label: 'name 2', value:'2'},
+                    {label: 'name 3', value:'3'}
+                ]}
+                value='1'
+                handleChange={handleChangeMock}
+                />
+            </ThemeProvider>
+        )
+
+        const dropdownElement = getByTestId('DropdownContent');
+        fireEvent.press(dropdownElement);
+
+        const name2Element = getByText('name 2');
+        fireEvent.press(name2Element)
+
+        expect(handleChangeMock).toBeCalledWith('2')
+    })
+
 })

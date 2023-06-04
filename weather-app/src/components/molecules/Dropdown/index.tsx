@@ -8,7 +8,7 @@ import { Input } from '@atoms/Input'
 export type DropdownComponentInterface = {
     value?: string | number | boolean,
     items?: item[],
-    handleChande?:(value: string) => void,
+    handleChange?:(value: string) => void,
     isDay?: 'dia' | 'noite',
 
 }
@@ -29,7 +29,7 @@ export function DropdownComponent(Props: DropdownComponentInterface) {
     const [dropdownConfig, setDropdownConfig] = useState(initConfig)
     const {data, value} = dropdownConfig;
     
-    const { handleChande = () => {}} = Props
+    const { handleChange = () => {}} = Props
     
     // const searchRef = useRef<TextInput>();
 
@@ -61,7 +61,7 @@ export function DropdownComponent(Props: DropdownComponentInterface) {
             }
         })
         setIsClicked(!isClicked);
-        handleChande(value);
+        handleChange(value);
     }
     
   return (

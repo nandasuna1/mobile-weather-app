@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">58.62% </span>
+                <span class="strong">75.86% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>17/29</span>
+                <span class='fraction'>22/29</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">71.42% </span>
+                <span class="strong">57.14% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/7</span>
+                <span class='fraction'>4/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/12</span>
+                <span class='fraction'>6/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">58.62% </span>
+                <span class="strong">75.86% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>17/29</span>
+                <span class='fraction'>22/29</span>
             </div>
         
             
@@ -182,21 +182,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -214,20 +214,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -248,7 +248,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -269,7 +269,7 @@ import { Input } from '@atoms/Input'
 export type DropdownComponentInterface = {
     value?: string | number | boolean,
     items?: item[],
-    handleChande?:(value: string) =&gt; void,
+    handleChange?:(value: string) =&gt; void,
     isDay?: 'dia' | 'noite',
 &nbsp;
 }
@@ -290,7 +290,7 @@ export function DropdownComponent(Props: DropdownComponentInterface) {
     const [dropdownConfig, setDropdownConfig] = useState(initConfig)
     const {data, value} = dropdownConfig;
     
-    const { handleChande = <span class="fstat-no" title="function not covered" >() =</span>&gt; {}} = Props
+    const { handleChange = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >() =</span>&gt; {}}</span> = Props
     
     // const searchRef = useRef&lt;TextInput&gt;();
 &nbsp;
@@ -312,17 +312,17 @@ export function DropdownComponent(Props: DropdownComponentInterface) {
         }
     };
 &nbsp;
-    const handleOnPress = <span class="fstat-no" title="function not covered" >(v</span>alue: string) =&gt; {        
-<span class="cstat-no" title="statement not covered" >        setDropdownConfig(<span class="fstat-no" title="function not covered" >prevState </span>=&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            return {</span>
+    const handleOnPress = (value: string) =&gt; {        
+        setDropdownConfig(prevState =&gt; {
+            return {
                 ...prevState,
                 value,
                 search: '',
                 data: Props?.items
             }
         })
-<span class="cstat-no" title="statement not covered" >        setIsClicked(!isClicked);</span>
-<span class="cstat-no" title="statement not covered" >        handleChande(value);</span>
+        setIsClicked(!isClicked);
+        handleChange(value);
     }
     
   return (
@@ -346,7 +346,7 @@ export function DropdownComponent(Props: DropdownComponentInterface) {
                     scrollEnabled={false}
                     renderItem={({item, index}) =&gt; {
                         return (
-                            &lt;ListComponent onPress={<span class="fstat-no" title="function not covered" >() =</span>&gt; <span class="cstat-no" title="statement not covered" >handleOnPress(item?.value)}</span> &gt;
+                            &lt;ListComponent onPress={() =&gt; handleOnPress(item?.value)} &gt;
                                 &lt;Text&gt;{item?.label}&lt;/Text&gt;
                             &lt;/ListComponent&gt;
                         )
@@ -364,7 +364,7 @@ export function DropdownComponent(Props: DropdownComponentInterface) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-04T14:00:49.243Z
+                at 2023-06-04T15:06:27.435Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

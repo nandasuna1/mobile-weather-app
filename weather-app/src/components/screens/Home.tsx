@@ -8,7 +8,7 @@ export default function Home() {
   const [currentValue, setCurrentValue] = useState('Recife,PE');
   const { data } = useGetWeatherByCityNameQuery(currentValue);
   
-  const handleChande = (value: string) => {
+  const handleChange = (value: string) => {
     setCurrentValue(value)
   } 
 
@@ -19,7 +19,7 @@ export default function Home() {
       DropdownProps={{
         items: ITEMS,
         value: currentValue,
-        handleChande,
+        handleChange,
         isDay: data?.results?.currently
       }}
       />
