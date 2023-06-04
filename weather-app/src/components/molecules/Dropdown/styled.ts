@@ -1,4 +1,5 @@
 import { DayAndNight } from "@templates/HomeTemplate/styles";
+import { TextInput } from "react-native";
 import styled from "styled-components/native";
 
 export const DropdownBox = styled.View`
@@ -23,6 +24,6 @@ export const List = styled.View<DayAndNight>`
 export const ListComponent = styled.TouchableOpacity`
     margin: 2px;
 `
-export const SearchInput = styled.TextInput`
+export const SearchInput = styled(TextInput)`
     color: white;
 `

@@ -8,6 +8,14 @@ import type { JestConfigWithTsJest } from 'ts-jest'
 const jestConfig: JestConfigWithTsJest = {
   ...tsjPreset,
   preset: 'jest-expo',
+  moduleNameMapper: {
+    '^@assets/(.*)$': '<rootDir>/src/assets/$1',
+    '^@atoms/(.*)$': '<rootDir>/src/components/atoms/$1',
+    '@components': "./src/components",
+    '@screens': './src/screens',
+    '@storage': './src/storage',
+    '@utils': './src/utils'
+  },
   transform: {
     "^.+\\.(js|jsx)$": "babel-jest",
     '^.+\\.tsx?$': [

@@ -1,118 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1683548119533" clover="3.2.0">
-  <project timestamp="1683548119533" name="All files">
-    <metrics statements="35" coveredstatements="22" conditionals="39" coveredconditionals="10" methods="12" coveredmethods="4" elements="86" coveredelements="36" complexity="0" loc="35" ncloc="35" packages="6" files="20" classes="20"/>
-    <package name="assets">
-      <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="SunCloud.png" path="/home/fernanda/github/mobile-weather-app/weather-app/src/assets/SunCloud.png">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="SunCloudRain.png" path="/home/fernanda/github/mobile-weather-app/weather-app/src/assets/SunCloudRain.png">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="cloud.png" path="/home/fernanda/github/mobile-weather-app/weather-app/src/assets/cloud.png">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="foggy.png" path="/home/fernanda/github/mobile-weather-app/weather-app/src/assets/foggy.png">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="hail.png" path="/home/fernanda/github/mobile-weather-app/weather-app/src/assets/hail.png">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="moon.png" path="/home/fernanda/github/mobile-weather-app/weather-app/src/assets/moon.png">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="moonCloud.png" path="/home/fernanda/github/mobile-weather-app/weather-app/src/assets/moonCloud.png">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="rain.png" path="/home/fernanda/github/mobile-weather-app/weather-app/src/assets/rain.png">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="snow.png" path="/home/fernanda/github/mobile-weather-app/weather-app/src/assets/snow.png">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="sun.png" path="/home/fernanda/github/mobile-weather-app/weather-app/src/assets/sun.png">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="thunder.png" path="/home/fernanda/github/mobile-weather-app/weather-app/src/assets/thunder.png">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-    </package>
+<coverage generated="1685887249292" clover="3.2.0">
+  <project timestamp="1685887249293" name="All files">
+    <metrics statements="69" coveredstatements="57" conditionals="14" coveredconditionals="10" methods="20" coveredmethods="11" elements="103" coveredelements="78" complexity="0" loc="69" ncloc="69" packages="5" files="9" classes="9"/>
     <package name="components.atoms.Icon">
-      <metrics statements="3" coveredstatements="3" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
+      <metrics statements="10" coveredstatements="10" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
       <file name="index.tsx" path="/home/fernanda/github/mobile-weather-app/weather-app/src/components/atoms/Icon/index.tsx">
-        <metrics statements="1" coveredstatements="1" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
-        <line num="15" count="1" type="stmt"/>
+        <metrics statements="5" coveredstatements="5" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="14" count="1" type="cond" truecount="3" falsecount="0"/>
+        <line num="16" count="4" type="stmt"/>
       </file>
       <file name="styles.ts" path="/home/fernanda/github/mobile-weather-app/weather-app/src/components/atoms/Icon/styles.ts">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
       </file>
     </package>
-    <package name="components.atoms.Image">
-      <metrics statements="10" coveredstatements="1" conditionals="19" coveredconditionals="0" methods="4" coveredmethods="0"/>
-      <file name="index.tsx" path="/home/fernanda/github/mobile-weather-app/weather-app/src/components/atoms/Image/index.tsx">
-        <metrics statements="6" coveredstatements="0" conditionals="13" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="49" count="0" type="stmt"/>
-        <line num="56" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="58" count="0" type="stmt"/>
-        <line num="60" count="0" type="cond" truecount="0" falsecount="6"/>
-        <line num="62" count="0" type="stmt"/>
+    <package name="components.atoms.Input">
+      <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="index.tsx" path="/home/fernanda/github/mobile-weather-app/weather-app/src/components/atoms/Input/index.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
       </file>
-      <file name="styles.ts" path="/home/fernanda/github/mobile-weather-app/weather-app/src/components/atoms/Image/styles.ts">
-        <metrics statements="4" coveredstatements="1" conditionals="6" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="8" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="13" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="18" count="0" type="cond" truecount="0" falsecount="2"/>
+      <file name="styles.ts" path="/home/fernanda/github/mobile-weather-app/weather-app/src/components/atoms/Input/styles.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
       </file>
     </package>
     <package name="components.atoms.Text">
-      <metrics statements="6" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <metrics statements="11" coveredstatements="11" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
       <file name="index.tsx" path="/home/fernanda/github/mobile-weather-app/weather-app/src/components/atoms/Text/index.tsx">
-        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="5" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
       </file>
       <file name="styles.ts" path="/home/fernanda/github/mobile-weather-app/weather-app/src/components/atoms/Text/styles.ts">
-        <metrics statements="4" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
-        <line num="6" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="7" count="0" type="stmt"/>
+        <line num="6" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="7" count="5" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="components.molecules.ButtonIcon">
-      <metrics statements="5" coveredstatements="5" conditionals="15" coveredconditionals="7" methods="3" coveredmethods="2"/>
-      <file name="index.tsx" path="/home/fernanda/github/mobile-weather-app/weather-app/src/components/molecules/ButtonIcon/index.tsx">
-        <metrics statements="1" coveredstatements="1" conditionals="11" coveredconditionals="6" methods="1" coveredmethods="1"/>
-        <line num="24" count="1" type="stmt"/>
+    <package name="components.molecules.Dropdown">
+      <metrics statements="37" coveredstatements="25" conditionals="9" coveredconditionals="6" methods="13" coveredmethods="4"/>
+      <file name="index.tsx" path="/home/fernanda/github/mobile-weather-app/weather-app/src/components/molecules/Dropdown/index.tsx">
+        <metrics statements="29" coveredstatements="17" conditionals="7" coveredconditionals="5" methods="12" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="32" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="37" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="54" count="2" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="67" count="2" type="stmt"/>
+        <line num="69" count="1" type="stmt"/>
+        <line num="79" count="0" type="stmt"/>
+        <line num="87" count="3" type="stmt"/>
+        <line num="88" count="0" type="stmt"/>
       </file>
-      <file name="styles.ts" path="/home/fernanda/github/mobile-weather-app/weather-app/src/components/molecules/ButtonIcon/styles.ts">
-        <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="1" methods="2" coveredmethods="1"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="16" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="22" count="1" type="stmt"/>
+      <file name="styled.ts" path="/home/fernanda/github/mobile-weather-app/weather-app/src/components/molecules/Dropdown/styled.ts">
+        <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="19" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="24" count="1" type="stmt"/>
         <line num="27" count="1" type="stmt"/>
       </file>
     </package>
     <package name="theme">
-      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="index.ts" path="/home/fernanda/github/mobile-weather-app/weather-app/src/theme/index.ts">
-        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
       </file>
     </package>
   </project>

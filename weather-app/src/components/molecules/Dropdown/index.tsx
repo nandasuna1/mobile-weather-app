@@ -1,19 +1,14 @@
-import { FlatList } from 'react-native'
-import React, { Ref, useRef, useState } from 'react'
+import { FlatList, TextInput } from 'react-native'
+import React, { MutableRefObject, Ref, useRef, useState } from 'react'
 import { DropdownBox, DropdownContent, List, ListComponent, SearchInput } from './styled'
 import Text from '@atoms/Text'
 import { Icon } from '@atoms/Icon'
+import { Input } from '@atoms/Input'
 
 export type DropdownComponentInterface = {
-    open?: boolean,
     value?: string | number | boolean,
     items?: item[],
-    setOpen?: (open: boolean) => void,
-    setValue?: () => void,
-    setItems?: () => void,
-    multiple?: string,
-    cidade?: string,
-    changeCity?:(city: string) => void,
+    handleChande?:(value: string) => void,
     isDay?: 'dia' | 'noite',
 
 }
@@ -23,50 +18,67 @@ type item = {
     value: string
 }
 
-export default function DropdownComponent(Props: DropdownComponentInterface) {
-    const [search, setSearch] = useState('');
-    const [cidade, setCidade] = useState(Props?.cidade)
+export function DropdownComponent(Props: DropdownComponentInterface) {
     const [isClicked, setIsClicked] = useState(false)
-    const [data, setData] = useState(Props?.items)
-    const { changeCity = () => {} } = Props
     
+    const initConfig = {
+        value: Props?.value,
+        data: Props?.items,
+        search: '',
+    }
+    const [dropdownConfig, setDropdownConfig] = useState(initConfig)
+    const {data, value} = dropdownConfig;
+    
+    const { handleChande = () => {}} = Props
+    
+    // const searchRef = useRef<TextInput>();
 
-    const searchRef = useRef();
     const onSearch = (search: string) => {
         if (search !== '') {
-        let tempData = data?.filter(item => {
-            return item?.value?.toLowerCase().indexOf(search.toLowerCase()) > -1;
-        });
-        setData(tempData);
+        setDropdownConfig(prevState => {
+            return {
+                ...prevState,
+                data: data?.filter(item => item?.value?.toLowerCase().indexOf(search.toLowerCase()) > -1)
+            }
+        })
         } else {
-        setData(Props?.items);
+            setDropdownConfig(prevState => {
+                return {
+                    ...prevState,
+                    data: Props?.items
+                }
+            })
         }
     };
 
     const handleOnPress = (value: string) => {        
-        setCidade(value);
+        setDropdownConfig(prevState => {
+            return {
+                ...prevState,
+                value,
+                search: '',
+                data: Props?.items
+            }
+        })
         setIsClicked(!isClicked);
-        onSearch('');
-        setSearch('');
-        changeCity(value);
+        handleChande(value);
     }
     
   return (
       <DropdownBox>
-        <DropdownContent onPress={() => {setIsClicked(!isClicked)}}>
+        <DropdownContent onPress={() => setIsClicked(!isClicked)} testID='DropdownContent'>
             <Icon icon='location-pin' />
-            <Text>{cidade}</Text>
+            <Text>{value}</Text>
             <Icon icon={ isClicked ? 'arrow-drop-up' :'arrow-drop-down'} size={30}/>
         </DropdownContent>
         {isClicked && 
             <List isDay={Props.isDay}>
-                <SearchInput 
+                <Input 
                     placeholder='Procure sua cidade...' 
                     onChangeText={ txt => {
                         onSearch(txt)
                     }}
-                    ref={searchRef}
-                    isDay={Props.isDay}
+                    testID='DropdownInput'
                 />
                 <FlatList 
                     data={data}

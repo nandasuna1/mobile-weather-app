@@ -1,4 +1,4 @@
-import DropdownComponent, { DropdownComponentInterface } from "@molecules/Dropdown";
+import { DropdownComponent, DropdownComponentInterface } from "@molecules/Dropdown";
 import { Container } from "./styled";
 import { ButtonIcon, ButtonIconInterface } from "@molecules/ButtonIcon";
 

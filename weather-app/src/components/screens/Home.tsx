@@ -5,12 +5,12 @@ import { useGetWeatherByCityNameQuery } from '@services/weatherApi';
 
 
 export default function Home() {
-  const [currentCity, setCurrentCity] = useState('Recife,PE');
-  const { data, isFetching } = useGetWeatherByCityNameQuery(currentCity);
+  const [currentValue, setCurrentValue] = useState('Recife,PE');
+  const { data } = useGetWeatherByCityNameQuery(currentValue);
   
-  const changeCity = (city: string) => {
-    setCurrentCity(city)
-  }  
+  const handleChande = (value: string) => {
+    setCurrentValue(value)
+  } 
 
   return (
     <HomeTemplate 
@@ -18,8 +18,8 @@ export default function Home() {
       WeekList={data?.results?.forecast.slice(0,5)}
       DropdownProps={{
         items: ITEMS,
-        cidade: currentCity,
-        changeCity: changeCity,
+        value: currentValue,
+        handleChande,
         isDay: data?.results?.currently
       }}
       />
